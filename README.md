@@ -1,21 +1,21 @@
-# 🗂️ @robert.tools/sample
+# 🗂️ @robert.tools/task
 
-<description>
+A system to run tasks
 
 ## 📜 Usage
 
 ### 🟢 Installation
 
 ```bash
-npm install @robert.tools/sample
+npm install @robert.tools/task
 ```
 
 ### 📝 Sample usage
 
 ```typescript
-import { <name> } from '@robert.tools/sample';
+import { task } from '@robert.tools/task';
 
-<name>('hello'); // '<name>: hello'
+task('hello'); // 'task: hello'
 ```
 
 ## 🗃️ commands

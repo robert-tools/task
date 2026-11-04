@@ -1,18 +1,18 @@
 /**
  * 🧪 testing module
- * @version <version>
- * @date <date>
- * @license <license>
- * @author <author> <github.com/<user>>
+ * @version 1.0.0
+ * @date 2026-11-04
+ * @license MIT
+ * @author Robert Willemelis <github.com/willi84>
  */
 import { sample } from './index';
 
-describe('@robert.tools/sample', () => {
-    it('should return a <name> string', () => {
+describe('@robert.tools/task', () => {
+    it('should return a task string', () => {
         expect(sample('hello')).toBe('sample: hello');
     });
 
-    it('should return a <name> string with empty input', () => {
+    it('should return a task string with empty input', () => {
         expect(sample('')).toBe('sample: ');
     });
 });
