@@ -1,7 +1,7 @@
 /**
  * ⚒️ wallaby.js configuration
- * @version 1.0.0
- * @date 2026-11-04
+ * @version 1.0.1
+ * @date 2026-11-11
  * @license MIT
  * @author Robert Willemelis <github.com/willi84>
  */

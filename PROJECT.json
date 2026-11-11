@@ -2,7 +2,7 @@
     "$schema": "https://willi84.github.io/project-tracking-record/project.schema.json",
     "🗂️ name": "@robert.tools/task",
     "🎯 goal": "A system to run tasks",
-    "🔖 version": "1.0.0",
+    "🔖 version": "1.0.1",
     "📄 id": "ROB-005",
     "⚖️ license": "MIT",
     "👩 author": "Robert Willemelis",
