@@ -60,16 +60,27 @@ describe('✅ getArgs()', () => {
 });
 describe('✅ getName()', () => {
     const FN = getName;
+    const name = 'task';
     const SCRIPT = ['node', 'script.js'];
-    const ARGV = [...SCRIPT, 'task'];
+    const ARGV = [...SCRIPT, name];
     afterEach(() => {
         jest.restoreAllMocks();
     });
     it('should return the correct name', () => {
         jest.replaceProperty(process, 'argv', [...ARGV, 'arg1', 'arg2']);
-        expect(FN()).toEqual('task');
+        expect(FN()).toEqual(name);
     });
-    it('should return the correct name when only node and script are provided', () => {
+    it('should return the correct name if its the file name', () => {
+        jest.replaceProperty(process, 'argv', [...SCRIPT]);
+        // expect(FN()).toEqual(name);
+        expect(FN(true)).toEqual('script');
+    });
+    it('should return undefined when no file name provided', () => {
+        jest.replaceProperty(process, 'argv', []);
+        // expect(FN()).toEqual(name);
+        expect(FN(true)).toEqual(undefined);
+    });
+    it('should return undefined when no argument is provided', () => {
         jest.replaceProperty(process, 'argv', SCRIPT);
         expect(FN()).toEqual(undefined);
     });

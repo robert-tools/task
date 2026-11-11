@@ -16,18 +16,29 @@ export const getArgs = (): string[] => {
 
 /**
  * 🎯 Get the name of the task from the command-line arguments.
+ * @param {boolean} isFileName ➡️ task name is a file name and not param
  * @returns {$string} 📤 name of the task
  */
-export const getName = (): $string => {
-    return process.argv[2]; // TODO: detect 2 oder 3
+export const getName = (isFileName = false): $string => {
+    if (isFileName) {
+        const taskFile = process.argv[1];
+        if (!taskFile) {
+            return taskFile;
+        }
+        const taskName = taskFile.split('/').pop()?.split('.').shift() ?? '';
+        return taskName;
+    }
+    const taskName = process.argv[2];
+    return taskName; // TODO: detect 2 oder 3
 };
 
 /**
  * 🎯 Get environment information for the current task.
+ * @param {boolean} isFileName ➡️ task name is a file name and not param
  * @returns {boolean} 📤 true if environment information is available
  */
-export const getEnvInfo = (): boolean => {
-    const name = getName();
+export const getEnvInfo = (isFileName = false): boolean => {
+    const name = getName(isFileName);
     if (!name) {
         LOG.FAIL('No task name provided.');
         return false;
@@ -152,10 +163,11 @@ export const shutdown = (children: ChildProcess[]) => {
 
 /**
  * 🎯 Check the environment for required conditions
+ * @param {boolean} isFileName ➡️ task name is a file name and not param
  * @returns {boolean} ➡️ true if environment is valid, false otherwise
  */
-export const checkEnv = (): boolean => {
-    if (!getEnvInfo()) return false;
+export const checkEnv = (isFileName = false): boolean => {
+    if (!getEnvInfo(isFileName)) return false;
     if (!checkOldProcesses()) return false;
     return true;
 };

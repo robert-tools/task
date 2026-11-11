@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.0.1
+
+### 🗃️ API changes
+
+Allow reading process name from file name instead of command line argument.
+This is useful when running tasks from a script file.
+
+- updated: getName(isFileName: boolean)
+- updated: getEnvInfo(isFileName: boolean)
+- updated: checkEnv(isFileName: boolean)
+
 ## 1.0.0
 
 ### ⚙️ chore
