@@ -22,8 +22,26 @@ task('hello'); // 'task: hello'
 
 After an npm install with `npm i` the following commands are available:
 
-* initialize placeholders: `npm run init <semantic>`
-* release a new version: `npm run release <semantic>`
+* get command line arguments: `getArgs()`
+* get the task name: `getName()`
+* get environment info: `getEnvInfo()`
+* check a process: `checkProcess(name)`
+* check old processes: `checkOldProcesses(name[])`
+* start processes: `startProcesses(TASKS)`
+* run a command: `run(command, args)`
+* run a task: `runTask(name, args)`
+* shutdown: `shutdown(ChildProcess[])`
+* check environment: `checkEnv()`
+* start an app: `startApp(appName, param)`
+* start multiple apps: `startApps(APP[])`
+* build an app: `buildApp(appName, param)`
+* build multiple apps: `buildApps(APP[])`
+
+### specific
+
+* run an npm command: `runNpm(command, args)`
+* start Vite: `startVite(type, config)`
+* start Eleventy: `startEleventy(serve)`
 
 ## ⚖️ Notes
 

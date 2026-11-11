@@ -5,4 +5,7 @@
  * @license MIT
  * @author Robert Willemelis <github.com/willi84>
  */
-export type SAMPLE = string;
+export type APP = string | { name: string; args: string };
+export type TASK = { command: string; args: string[] };
+export type TASKS = TASK[];
+export type PROCESSES = ChildProcess[];
